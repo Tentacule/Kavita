@@ -84,6 +84,12 @@ public class MangaParsingTests
     [InlineData("Accel World Chapter 001 Volume 002", "2")]
     [InlineData("Accel World Volume 2", "2")]
     [InlineData("Nagasarete Airantou - Vol. 30 Ch. 187.5 - Vol.31 Omake", "30")]
+    [InlineData("Les Gouttes de Dieu - Mariage T30 (Agi-Okimoto)", "30")]
+    [InlineData("Les Gouttes de Dieu - Mariage Tome30 (Agi-Okimoto)", "30")]
+    [InlineData("Ah! My Goddess T18 (Fujishima) (2001) [Digital-1499] [Manga FR] (PapriKa)", "18")]
+    [InlineData("BLAME! - Tome 01", "1")]
+    [InlineData("BLAME! - Tome #01", "1")]
+    [InlineData("KSKM T02 - C001 à 009 [199p] (Yasushi BABA) [Scantrads]", "2")]
     public void ParseVolumeTest(string filename, string expected)
     {
         Assert.Equal(expected, API.Services.Tasks.Scanner.Parser.Parser.ParseVolume(filename, LibraryType.Manga));
@@ -212,6 +218,12 @@ public class MangaParsingTests
     [InlineData("不安の種\uff0b - 01", "不安の種\uff0b")]
     [InlineData("Giant Ojou-sama - Ch. 33.5 - Volume 04 Bonus Chapter", "Giant Ojou-sama")]
     [InlineData("[218565]-(C92) [BRIO (Puyocha)] Mika-nee no Tanryoku Shidou - Mika s Guide to Self-Confidence (THE IDOLM@STE", "")]
+    [InlineData("Les Gouttes de Dieu - Mariage T30 (Agi-Okimoto)", "Les Gouttes de Dieu - Mariage")]
+    [InlineData("Les Gouttes de Dieu - Mariage Tome30 (Agi-Okimoto)", "Les Gouttes de Dieu - Mariage")]
+    [InlineData("Ah! My Goddess T18 (Fujishima) (2001) [Digital-1499] [Manga FR] (PapriKa)", "Ah! My Goddess")]
+    [InlineData("BLAME! - Tome 01", "BLAME!")]
+    [InlineData("BLAME! - Tome #01", "BLAME!")]
+    [InlineData("KSKM T02 - C001 à 009 [199p] (Yasushi BABA) [Scantrads]", "KSKM")]
     public void ParseSeriesTest(string filename, string expected)
     {
         Assert.Equal(expected, API.Services.Tasks.Scanner.Parser.Parser.ParseSeries(filename, LibraryType.Manga));

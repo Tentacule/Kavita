@@ -198,6 +198,10 @@ public static partial class Parser
         new Regex(
             @"(\s|_)?(?<Volume>\d+(?:(\-)\d+)?)(\s|_)Том(а?)",
             MatchOptions, RegexTimeout),
+        // Les Gouttes de Dieu - Mariage T01 (Agi-Okimoto)
+        new Regex(
+            @"(?<Series>.+)\s?(\b|_|-)\s?(tome\s?#?|t)(?<Volume>\d+(-\d+)?)",
+            MatchOptions, RegexTimeout),
     };
 
     private static readonly Regex[] MangaSeriesRegex = new[]
@@ -221,6 +225,10 @@ public static partial class Parser
         // Russian Chapter: Главы n -> Chapter n
         new Regex(
             @"(?<Series>.+?)(Глава|глава|Главы|Глава)(\.?)(\s|_)?(?<Chapter>\d+(?:.\d+|-\d+)?)",
+            MatchOptions, RegexTimeout),
+        // Les Gouttes de Dieu - Mariage T01 (Agi-Okimoto)
+        new Regex(
+            @"(?<Series>.+)\s?(\b|_|-)\s?(tome\s?#?|t)(?<Volume>\d+(-\d+)?)",
             MatchOptions, RegexTimeout),
         // Grand Blue Dreaming - SP02
         new Regex(
